@@ -5,12 +5,13 @@
 /*}*/
 html, body {
     max-width: 100%;
-    overflow-x: hidden;
+    min-height: 100%;
     box-sizing: border-box;
+    font-family: Monsterrat, sans-serif;
 }
-body {
-    position: relative;
-    height: 100%;
+
+header {
+    min-height: 100%;
 }
 /*HEADER*/
 .header--wrapper {
@@ -35,18 +36,18 @@ body {
     font-weight: 500;
 }
 .header--block__lef__phones {
-    margin-right: 32px;
+    margin-right: 3opx;
     line-height: 15px;
 }
 .header--block__lef__phones img {
     width: 14px;
     height: 22px;
-    margin-right: 9px;
+    margin-right: 7px;
     vertical-align: middle;
 }
 .phone--number {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
 }
 .phone--number__smaller {
     font-size: 11px;
@@ -93,7 +94,7 @@ body {
 }
 .sale {
    color: white;
-    background-color: red;
+    background-color: #ea2423;
     border: none;
 }
 
@@ -155,3 +156,23 @@ body {
     vertical-align: middle;
     filter: grayscale(100%);
 }
+/*ADVERT*/
+.advert{
+    margin-top: 1%;
+    width: 100%;
+    height: 300px;
+    background-color: #ea2423;
+}
+.advert--info {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+ .advert--clockImg , .advert--text  {
+    display: inline-block;
+    vertical-align: middle;
+}
+ .advert--clockImg {
+     margin-right: 1%;
+ }
+
