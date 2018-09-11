@@ -22,26 +22,24 @@ header {
     text-align: center;
     margin-top: 15px;
 }
-.header--block__lef {
+.header--block__left {
     float: left;
 }
-.header--block__lef div {
+.header--block__left div {
     display: inline-block;
     vertical-align: middle;
 }
-.header--block__lef__phones {
-    width: 130px;
+.header--block__left__phones {
+    width: 200px;
     height: 28px;
     line-height: 15px;
     font-weight: 500;
 }
-.header--block__lef__phones {
+.header--block__left__phones {
     margin-right: 3px;
     line-height: 15px;
 }
-.header--block__lef__phones img {
-    width: 14px;
-    height: 22px;
+.header--block__left__phones img {
     margin-right: 7px;
     vertical-align: middle;
 }
@@ -139,7 +137,7 @@ header {
 .header--menu--element__right {
     text-align: right;
     float: right;
-    width: 420px;
+    width: 350px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -157,22 +155,13 @@ header {
 /*ADVERT*/
 .advert{
     margin-top: 1%;
-    width: 100%;
-    height: 300px;
-    background-color: #ea2423;
 }
 .advert--info {
-    font-size: 20px;
-    text-transform: uppercase;
-    font-weight: 400;
+    min-height: 60px;
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
 }
- .advert--clockImg , .advert--text  {
-    display: inline-block;
-    vertical-align: middle;
-}
- .advert--clockImg {
-     margin-right: 1%;
- }
 
 /*List of products*/
 #listOfProducts {
@@ -181,7 +170,7 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     min-height: 100vh;
-    margin-top: 4%;
+    margin-top: 2%;
  }
 
 .order--wrapper {
@@ -266,7 +255,7 @@ header {
     display: flex;
     flex-direction: row-reverse;
    vertical-align: middle;
-    margin-top: 4%;
+    margin-top: 2%;
 }
 .select--itemsPerPage select {
     margin-right: 6%;
@@ -281,12 +270,12 @@ header {
 .select--itemsPerPage select:focus {
     outline: none;
 }
+
 /*FOOTER*/
 .footer--upper {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    flex-wrap: wrap;
     min-height: 200px;
 }
 .footer--shopping {
@@ -377,4 +366,23 @@ header {
 .footer--lower__right img {
     width: 74px;
     height: 35px;
+}
+/*MEDIA-QUERIES*/
+@media (max-width: 1200px) {
+    .header--block__left div {
+        display: block;
+        margin-bottom: 8%;
+    }
+    .header--menu--element__right {
+      width: 190px;
+    }
+    .header--menu--element {
+        width: 130px
+    }
+    .footer--lower__right {
+        width: 200px;
+    }
+}
+@media (max-width: 1000px) {
+
 }
