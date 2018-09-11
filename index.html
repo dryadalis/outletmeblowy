@@ -7,6 +7,7 @@
     <title>Outlet, Tanie meble</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
 <header>
@@ -37,7 +38,7 @@
         </div>
     </div>
     <!--MENU-->
-    <nav class="header--menu">
+    <nav class="header--menu" id="headerMenu">
         <button href="#" class="header--menu--element sale">
             Wyprzedaż <br/>do -70%
         </button>
@@ -89,6 +90,23 @@
             <a href="https://pl.pinterest.com/" target="_blank"><img src="images/pinterest-icon.png" class="blog--icon"></a>
             <a href="https://www.facebook.com/" target="_blank"><img src="images/fb-icon.png" class="blog--icon"></a>
         </div>
+        <!--MOBILE NAV-->
+        <div class="mobile--nav">
+                <div class="mobile--nav__left">
+                    <i class="fas fa-bars fa-2x hamburgerMenu" id="hamburgerMenu" ></i>
+                    <div class="mobile--navBar" id="mobile--navBar">
+                        <a href="#">Wyprzedąż !</a>
+                        <a href="#">Promocja</a>
+                        <a href="#">MeblowyBlog</a>
+                    </div>
+                </div>
+                <div class="mobile--nav__right">
+                    <a href="#" title="Zadzwoń"><img src="images/phone-icon.png" style="margin-right: 2%"></a>
+                    <a href="#" title="Napisz do nas"><img src="images/mail-icon.png"></a>
+                    <a href="#" title="Wyszukaj"><img src="images/search-icon.png"></a>
+                    <a href="#" title="Twój koszyk"><img src="images/trolley-icon.png"></a>
+                </div>
+        </div>
     </nav>
 </header >
 
@@ -101,7 +119,7 @@
         <img src="images/clock.png">
         <img src="images/items10.png">
     </div>
-    <div>
+    <div class="advert--hotThursday">
         <img src="images/warning.png ">
         <img src="images/hotthursday.png">
     </div>
