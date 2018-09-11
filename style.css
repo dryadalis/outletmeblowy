@@ -260,3 +260,101 @@ header {
 .order--bottom__producer {
     color: #9f9f9f;
 }
+
+/*FOOTER*/
+.footer--upper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: 200px;
+}
+.footer--shopping {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+.footer--shopping h3{
+    height: 20px;
+    color: #9f9f9f;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 32px;
+    text-transform: uppercase;
+}
+.footer--shopping a {
+    text-decoration: none;
+    width: 151px;
+    color: #1a171b;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 28px;
+}
+.footer--shopping a:hover {
+    font-weight: 700;
+}
+.footer--shopping p {
+    margin-top: 12%;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 17px;
+}
+.footer--lookbook {
+    color: #ff0000 !important;
+    font-weight: bold !important;
+    margin-top: 7%;
+}
+.footer--phoneImg img {
+    margin-top: 8%;
+    margin-right: 6%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer--openInfo {
+    margin-top: 6%;
+}
+.footer--btn {
+    margin-top: 14%;
+    width: 186px;
+    height: 36px;
+    background-color: #000000;
+    border: none;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+}
+.footer--btn:hover {
+    background-color: #4d4d4d;
+}
+.footer--lower {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.footer--lower__left {
+    margin-left: 3%;
+    align-self: flex-end;
+}
+.footer--lower__right {
+    width: 300px;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+}
+.footer--lower__right p {
+    color: #1a171b;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 21px;
+}
+.footer--lower__right img {
+    width: 74px;
+    height: 35px;
+}
