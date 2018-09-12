@@ -17,7 +17,7 @@ function getData() {
         if (this.readyState == 4 && this.status == 200) {
             const response = JSON.parse(xhttp.responseText);
             const responseList = response.list;
-            renderItems(responseList.splice(0, numitems));
+            renderItems(responseList.splice(0, numberOfDisplayed));
         }
     };
     xhttp.open("GET", "data.json", true);
