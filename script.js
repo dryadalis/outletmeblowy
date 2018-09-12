@@ -1,6 +1,40 @@
-let numitems = 4;
-const selectInput = document.getElementById("itemsPerPage");
+//Default numbers of item displayed on the site
+let numberOfDisplayed= 4;
 
+
+const selectInput = document.getElementById("itemsPerPage");
+const headerMenu = document.getElementById("headerMenu");
+const topOfHeaderMenu = headerMenu.offsetTop;
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+const closeIcon = document.getElementById("closeIcon");
+const mobileNavbar = document.getElementById("mobile--navBar");
+
+
+//Fetching data
+function getData() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            const response = JSON.parse(xhttp.responseText);
+            const responseList = response.list;
+            renderItems(responseList.splice(0, numitems));
+        }
+    };
+    xhttp.open("GET", "data.json", true);
+    xhttp.send();
+}
+getData();
+
+
+//Rendering data
+function renderItems(data) {
+    document.getElementById('listOfProducts').innerHTML = '';
+    data.forEach(function(item) {
+        document.getElementById('listOfProducts').innerHTML += order(item);
+    });
+}
+
+//The structure of displayed products
 function order(item) {
     return"\n " +
             "<div class=\"order--wrapper\">\n" +
@@ -28,38 +62,15 @@ function order(item) {
             "</div>\n";
 }
 
-function getData() {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          const response = JSON.parse(xhttp.responseText);
-          const responseList = response.list;
-            renderItems(responseList.splice(0, numitems));
-        }
-    };
-    xhttp.open("GET", "data.json", true);
-    xhttp.send();
-}
-
-function renderItems(data) {
-    document.getElementById('listOfProducts').innerHTML = '';
-    data.forEach(function(item) {
-        document.getElementById('listOfProducts').innerHTML += order(item);
-    });
-}
-
-selectInput.addEventListener("change", function () {
+//Changing the number of displayed items
+function changeNumberOfDisplayed () {
     let selectInputValue = selectInput.options[selectInput.selectedIndex].value;
-    numitems = selectInputValue;
+    numberOfDisplayed = selectInputValue;
     getData();
-});
+}
+selectInput.addEventListener("change", changeNumberOfDisplayed);
 
-getData();
-
-
-const headerMenu = document.getElementById("headerMenu");
-const topOfHeaderMenu = headerMenu.offsetTop;
-
+//Sticky navigation
 function fixedNav() {
     if(window.pageYOffset >= topOfHeaderMenu) {
         document.body.classList.add('fixed-nav');
@@ -70,11 +81,7 @@ function fixedNav() {
 window.addEventListener("scroll", fixedNav);
 
 
-const hamburgerMenu = document.getElementById("hamburgerMenu");
-const closeIcon = document.getElementById("closeIcon");
-const mobileNavbar = document.getElementById("mobile--navBar");
-
-
+//Show mobile navigation
 function openMobileNav() {
     if (mobileNavbar.style.display === "none") {
         mobileNavbar.style.display = "block";
@@ -82,9 +89,10 @@ function openMobileNav() {
         hamburgerMenu.style.display = "none";
     } else {
         mobileNavbar.style.display = "none";
-    };
+    }
 }
 
+//Hide mobile navigation
 function closeMobileNav() {
     mobileNavbar.style.display = "none";
     closeIcon.style.display = "none";
