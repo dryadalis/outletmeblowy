@@ -2,7 +2,30 @@ let numitems = 4;
 const selectInput = document.getElementById("itemsPerPage");
 
 function order(item) {
-    return "\n        <div class=\"order--wrapper\">\n            <a href=\"#\">\n                <div class=\"order--top\">\n                    <img src=\"images/trolleyplus-icon.png\">\n                    <div class=\"order--top__savings\">oszcz\u0119dzasz: <strong>" + item.price.gross.promo_float + "z\u0142</strong></div>\n                </div>\n                <div class=\"order--center\">\n                    <img src=\"https://www.outletmeblowy.pl/environment/cache/images/300_300_productGfx_" + item.main_image + ".jpg\">\n                </div>\n                <div class=\"order--bottom\">\n                    <div class=\"order--bottom__prices\">\n                        <div class=\"order--bottom__prices__final\">" + item.price.gross.final_float + "z\u0142</div>\n                        <div class=\"order--bottom__prices__base\">" + item.price.gross.base_float + "z\u0142</div>\n                    </div>\n                    <div class=\"order--bottom__name\">\n                        " + item.name + "\n                    </div> \n                    <div class=\"order--bottom__producer\">\n                        " + item.producer.name + "\n                    </div>\n                </div>\n                </a>\n         </div>\n    ";
+    return"\n " +
+            "<div class=\"order--wrapper\">\n" +
+                "<a href=\"#\">\n" +
+                    "<div class=\"order--top\">\n" +
+                        "<img src=\"images/trolleyplus-icon.png\">\n " +
+                        "<div class=\"order--top__savings\">oszcz\u0119dzasz: <strong>" + item.price.gross.promo_float + "z\u0142</strong></div>\n" +
+                        " " + "" +
+                    "</div>\n " +
+                    "<div class=\"order--center\">\n " +
+                        "<img src=\"https://www.outletmeblowy.pl/environment/cache/images/300_300_productGfx_" + item.main_image + ".jpg\">\n" +
+                    "</div>\n " +
+                    "<div class=\"order--bottom\">\n" +
+                         "<div class=\"order--bottom__prices\">\n " +
+                            "<div class=\"order--bottom__prices__final\">" + item.price.gross.final_float + "z\u0142</div>\n" +
+                            "<div class=\"order--bottom__prices__base\">" + item.price.gross.base_float + "z\u0142</div>\n " +
+                         "</div>\n" +
+                        "<div class=\"order--bottom__name\">\n " +
+                            "" + item.name + "\n" +
+                        "</div> \n" +
+                        "<div class=\"order--bottom__producer\">\n" + item.producer.name + "\n " +
+                        "</div>\n" +
+                    "</div>\n" +
+                "</a>\n" +
+            "</div>\n";
 }
 
 function getData() {
@@ -47,23 +70,28 @@ function fixedNav() {
 window.addEventListener("scroll", fixedNav);
 
 
-
-
-
-
-
-
-
-
-
-
-
 const hamburgerMenu = document.getElementById("hamburgerMenu");
-hamburgerMenu.addEventListener('click', function() {
-   const mobileNavbar = document.getElementById("mobile--navBar");
+const closeIcon = document.getElementById("closeIcon");
+const mobileNavbar = document.getElementById("mobile--navBar");
+
+
+function openMobileNav() {
     if (mobileNavbar.style.display === "none") {
         mobileNavbar.style.display = "block";
+        closeIcon.style.display = "block";
+        hamburgerMenu.style.display = "none";
     } else {
         mobileNavbar.style.display = "none";
-    }
-});
+    };
+}
+
+function closeMobileNav() {
+    mobileNavbar.style.display = "none";
+    closeIcon.style.display = "none";
+    hamburgerMenu.style.display = "block"
+}
+
+hamburgerMenu.addEventListener('click', openMobileNav);
+closeIcon.addEventListener("click", closeMobileNav);
+
+
